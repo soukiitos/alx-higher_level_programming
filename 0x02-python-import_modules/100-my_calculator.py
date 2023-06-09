@@ -5,7 +5,7 @@ if __name__ == "__main__":
     if len(sys.argv) - 1 != 3:
         print("Usage: {} <a> <operator> <b>".format(sys.argv[0]))
         sys.exit(1)
-    ops = {"+": add,"-": sub,"*": mul,"/": div}
+    ops = {"+": add, "-": sub, "*": mul, "/": div}
     if sys.argv[2] in list(ops.keys()):
         i = int(sys.argv[1])
         j = int(sys.argv[3])
