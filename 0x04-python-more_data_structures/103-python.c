@@ -50,7 +50,7 @@ void print_python_list(PyObject *p)
 		printf("[*] Allocated = %lu\n", ((PyListObject *)p)->allocated);
 		for (i = 0; i < s; i++)
 		{
-			j = PyList_GET_J(p, i);
+			j = PyList_GET_ITEM(p, i);
 			printf("Element %d: %s\n", i, j->ob_type->tp_name);
 			if (PyBytes_Check(j))
 			{
