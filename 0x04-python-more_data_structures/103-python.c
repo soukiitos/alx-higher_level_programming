@@ -10,7 +10,7 @@
 void print_python_bytes(PyObject *p)
 {
 	char *str = NULL;
-	Py_ssize_t s, i;
+	Py_ssize_t s = 0, i;
 
 	printf("[.] bytes object info\n");
 	if (!PyBytes_CheckExact(p))
@@ -25,7 +25,7 @@ void print_python_bytes(PyObject *p)
 		printf("  first %zd bytes:", s < 10 ? s + 1 : 10);
 		for (i = 0; i < s + 1 && i < 10; i++)
 		{
-			printf(" %2hhx", str[i]);
+			printf(" %02hhx", str[i]);
 		}
 		printf("\n");
 	}
@@ -39,7 +39,7 @@ void print_python_bytes(PyObject *p)
 void print_python_list(PyObject *p)
 {
 	int i;
-	Py_ssize_t s;
+	Py_ssize_t s = 0;
 	PyObject *j;
 
 	if (PyList_CheckExact(p))
@@ -50,7 +50,7 @@ void print_python_list(PyObject *p)
 		printf("[*] Allocated = %lu\n", ((PyListObject *)p)->allocated);
 		for (i = 0; i < s; i++)
 		{
-			j = PyList_GET_J(p, i);
+			j = PyList_GET_ITEM(p, i);
 			printf("Element %d: %s\n", i, j->ob_type->tp_name);
 			if (PyBytes_Check(j))
 			{
