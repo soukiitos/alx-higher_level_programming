@@ -3,24 +3,29 @@
 
 
 class Node:
+    '''Instantiate with data'''
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
 
+    '''data getter'''
     @property
     def data(self):
         return self.__data
 
+    '''data setter'''
     @data.setter
     def data(self, value):
         if type(value) != int:
             raise TypeError("data must be an integer")
         self.__data = value
 
+    '''data getter'''
     @property
     def next_node(self):
         return self.__next_node
 
+    '''next node setter'''
     @next_node.setter
     def next_node(self, value):
         if value is not None and type(value) is not Node:
@@ -32,9 +37,11 @@ class Node:
 
 
 class SinglyLinkedList:
+    '''simple instantiation'''
     def __init__(self):
         self.__head = None
 
+    '''Insert a new Node into the correct sorted position in the list'''
     def sorted_insert(self, value):
         a = Node(value)
         b = self.__head
@@ -54,6 +61,7 @@ class SinglyLinkedList:
         else:
             self.__head = a
             a.next_node = None
+    '''Define str'''
     def __str__(self):
         s = ""
         c = self.__head
