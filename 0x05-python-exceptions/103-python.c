@@ -70,8 +70,8 @@ void print_python_bytes(PyObject *p)
 		size = ((PyVarObject *)p)->ob_size + 1;
 	}
 	else
-                size = 10;
-        printf("  first %ld bytes: ", size);
+		size = 10;
+	printf("  first %ld bytes: ", size);
 	for (s = 0; s < size; s++)
 	{
 		printf("%02hhx", b->ob_sval[s]);
