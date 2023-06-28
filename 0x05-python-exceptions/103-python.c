@@ -1,5 +1,6 @@
 #include "Python.h"
 #include <stdio.h>
+#include <object.h>
 
 void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
@@ -100,5 +101,5 @@ void print_python_float(PyObject *p)
 	}
 	c = PyOS_double_to_string(obj->ob_fval, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
 	printf("  value: %s\n", c);
-	PyMem_free(c);
+	PyMem_FREE(c);
 }
