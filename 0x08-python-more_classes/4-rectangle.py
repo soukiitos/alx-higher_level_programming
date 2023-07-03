@@ -63,7 +63,7 @@ class Rectangle:
             rectangle.append("\n")
         rectangle.pop()
         return "".join(rectangle)
-    
+
     '''Recreate a new instance'''
     def __repr__(self):
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
