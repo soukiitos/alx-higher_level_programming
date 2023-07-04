@@ -4,6 +4,5 @@
 
 class LockedClass:
     '''Create a new instance attribute'''
-    def __init__(self):
 
-        self_name = "first_name"
+    __slots__ = ["first_name"]
