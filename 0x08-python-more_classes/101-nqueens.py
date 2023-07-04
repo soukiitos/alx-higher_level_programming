@@ -3,7 +3,7 @@ import sys
 
 
 def init_board(n):
-    board = [[' '  for i in range(n)] for i in range(n)]
+    board = [[' 'for i in range(n)]for i in range(n)]
     return board
 
 
