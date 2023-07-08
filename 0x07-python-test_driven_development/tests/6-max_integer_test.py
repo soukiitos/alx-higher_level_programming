@@ -20,7 +20,7 @@ class TestMaxInteger(unittest.TestCase):
     '''Define the max value'''
 
     def test_max_at_begginning(self):
-        max_at_beginning = [4, 3, 2, 1]
+        max_at_begginning = [4, 3, 2, 1]
         self.assertEqual(max_integer(max_at_begginning), 4)
     '''Define an empty list'''
 
@@ -35,7 +35,7 @@ class TestMaxInteger(unittest.TestCase):
     '''Define a list of floats'''
 
     def test_floats(self):
-        floats = [1.53, 6.33, -9.123, 15.2, 6.0]
+        floats = [1i.53, 6.33, -9.123, 15.2, 6.0]
         self.assertEqual(max_integer(floats), 15.2)
     '''Define a list of ints and floats'''
 
