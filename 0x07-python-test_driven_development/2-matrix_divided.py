@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+# 2-matrix_divided.py
+'''Define a divided matrix'''
+
+
 def matrix_divided(matrix, div):
+    '''Devide all elements of a matrix'''
     Err_Msg = "matrix must be a matrix (list of lists) of integers/floats"
     if not matrix or not isinstance(matrix, list) or any(
             not isinstance(lsts, list) for lsts in matrix):
