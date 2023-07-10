@@ -50,7 +50,7 @@ print_sorted method called with 1 arg.
 
 	>>> ml.print_sorted([4, 2, 5])
 	Traceback (most recent call last):
-	TypeError: print_sorted() task 1 positional argument but 2 were given
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
 
 print_sorted method called with 2 args.
 
