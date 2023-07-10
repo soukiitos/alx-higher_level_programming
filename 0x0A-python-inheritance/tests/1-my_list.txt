@@ -12,7 +12,7 @@ Import function from 1-my_list.
 
 ::
 
-	>>>MyList = __import___('1-my_list').MyList
+	>>> MyList = __import__('1-my_list').MyList
 
 Class Type test.
 
