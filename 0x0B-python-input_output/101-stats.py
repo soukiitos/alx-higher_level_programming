@@ -9,11 +9,8 @@ code = {'200': 0, '301': 0, '400': 0, '401': 0,
 t = 0
 
 
-'''Read stdin line by line and computes metrics'''
-
-
 def print_stats():
-    '''Print the stats'''
+    '''Print the stats and Read stdin line by line and computes metrics'''
     print("File size: ", size)
     for i, j in sorted(code.items()):
         if j != 0:
