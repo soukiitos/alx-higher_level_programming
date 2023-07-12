@@ -2,7 +2,7 @@
 '''Define Log parsing'''
 
 
-def print_stats():
+def print_stats(size, code):
     '''Print the stats and Read stdin line by line and computes metrics'''
     print("File size: ", size)
     for i, j in sorted(code.items()):
@@ -30,7 +30,7 @@ if __name__ == "__main__":
                     except ValueError:
                         pass
             if t % 10 == 0:
-                print_stats()
-        print_stats()
+                print_stats(size, code)
+        print_stats(size, code)
     except KeyboardInterrupt:
-        print_stats()
+        print_stats(size, code)
