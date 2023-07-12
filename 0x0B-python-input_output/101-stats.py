@@ -26,13 +26,13 @@ if __name__ == "__main__":
                 if line[-2] in code:
                     code[line[-2]] += 1
                     t += 1
-                    try:
-                        size += int(line[-1])
-                        if k == t:
-                            t += 1
-                    except ValueError:
-                        if k == t:
-                            continue
+                try:
+                    size += int(line[-1])
+                    if k == t:
+                        t += 1
+                except ValueError:
+                    if k == t:
+                        continue
             if t % 10 == 0:
                 print_stats()
         print_stats()
