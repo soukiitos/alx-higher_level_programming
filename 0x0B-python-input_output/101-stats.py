@@ -2,12 +2,12 @@
 '''Define Log parsing'''
 
 
-def print_stats(size, code):
+def print_stats():
     '''Print the stats and Read stdin line by line and computes metrics'''
-    print("File size: ", size)
+    print("File size: {}".format(size))
     for i, j in sorted(code.items()):
         if j != 0:
-            print(f"{i}: {j}")
+            print("{}: {}".format(i, j))
 
 
 if __name__ == "__main__":
@@ -22,15 +22,19 @@ if __name__ == "__main__":
         for line in sys.stdin:
             line = line.split()
             if len(line) >= 2:
+                k = t
                 if line[-2] in code:
                     code[line[-2]] += 1
                     t += 1
                     try:
                         size += int(line[-1])
+                        if k == t:
+                            t += 1
                     except ValueError:
-                        pass
+                        if k == t:
+                            continue
             if t % 10 == 0:
-                print_stats(size, code)
-        print_stats(size, code)
+                print_stats()
+        print_stats()
     except KeyboardInterrupt:
-        print_stats(size, code)
+        print_stats()
