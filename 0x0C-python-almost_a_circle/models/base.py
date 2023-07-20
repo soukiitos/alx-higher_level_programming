@@ -22,24 +22,24 @@ class Base:
         else:
             self.id = id
 
+    '''Define json list of dictionary'''
     @staticmethod
     def to_json_string(list_dictionaries):
-        '''Define json list of dictionary'''
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
             return dumps(list_dictionaries)
 
+    '''Define json string'''
     @staticmethod
     def from_json_string(json_string):
-        '''Define json string'''
         if json_string is None or json_string == "[]":
             return []
         return loads(json_string)
 
+    '''Define the saves of json to file'''
     @classmethod
     def save_to_file(cls, list_objs):
-        '''Define the saves of json to file'''
         with open("{}.json".format(cls.__name__), "w") as f:
             f.write(cls.to_json_string(list_objs))
         if list_objs is not None:
@@ -47,9 +47,9 @@ class Base:
         else:
             f.write("[]")
 
+    '''Define a create file'''
     @classmethod
     def create(cls, **dictionary):
-        '''Define a create file'''
         if cls is Rectangle:
             new = cls(1, 1)
         elif cls is Square:
@@ -59,9 +59,9 @@ class Base:
         new.update(**dictionary)
         return new
 
+    '''Define a string loading file'''
     @classmethod
     def load_from_file(cls):
-        '''Define a string loading file'''
         try:
             with open("{}.json".format(cls.__name__), "r") as f:
                 return [
@@ -71,9 +71,9 @@ class Base:
         except IOError:
             return []
 
+    '''Define a csv save to file'''
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        '''Define a csv save to file'''
         if list_objs is not None:
             if cls is not Rectangle:
                 list_objs = [[o.id, o.size, o.x, o.y] for o in list_objs]
@@ -86,9 +86,9 @@ class Base:
             writer = csv.writer(f)
             writer.writerow(list_objs)
 
+    '''Define the csv load from file'''
     @classmethod
     def load_from_file_csv(cls):
-        '''Define the csv load from file'''
         a = []
         filename = "{}.csv".format(cls.__name__)
         with open(filename, "r", newline="") as f:
@@ -108,9 +108,9 @@ class Base:
                 a.append(cls.create(**d))
         return a
 
+    '''Define a Rectangle and a Square drawing'''
     @staticmethod
     def draw(list_rectangles, list_squares):
-        '''Define a Rectangle and a Square drawing'''
         t = turtle.Turtle()
         t.screen.bgcolor("#a5fe67")
         t.pensize(3)

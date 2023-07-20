@@ -19,13 +19,13 @@ class square:
                         self.width
                         )
 
-    @property
     '''Define the square size'''
+    @property
     def size(self):
         return self.width
 
-    @size.setter
     '''Define the square size'''
+    @size.setter
     def size(self, value):
         self.width = value
         self.height = value
