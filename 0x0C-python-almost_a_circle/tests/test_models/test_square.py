@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+#test_square.py
 '''Define a square test class'''
 import unittest
+import sys
 from models.base import Base
 from models.square import Square
 from random import randrange
@@ -218,7 +220,7 @@ class TestSquare(unittest.TestCase):
         r.size = w
         self.assertEqual(r.area(), w * w)
         w = randrange(10) + 1
-        r Square(w, 7, 8, 9)
+        r = Square(w, 7, 8, 9)
         self.assertEqual(r.area(), w * w)
         w = randrange(10) + 1
         r = Square(w, y=7, x=8, id=9)

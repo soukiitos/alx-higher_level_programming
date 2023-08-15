@@ -3,7 +3,6 @@
 import csv
 import json
 from json import loads, dumps
-import turtle
 import time
 from random import randrange
 from os import path
