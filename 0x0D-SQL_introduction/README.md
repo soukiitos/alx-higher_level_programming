@@ -1,5 +1,5 @@
-#0x0D. SQL - Introduction
-##Resources
+# 0x0D. SQL - Introduction
+## Resources
 - [What is Database & SQL?](https://intranet.alxswe.com/rltoken/yyRKTEdRkYEVlRgZPbasjw)
 - [A Basic MySQL Tutorial](https://intranet.alxswe.com/rltoken/sV2PtK5YfQsXWW1malRZ5Q)
 - [Basic SQL statements: DDL and DML](https://intranet.alxswe.com/rltoken/IUKo4-UaRZSKPvXr5u9oBw)
@@ -11,7 +11,7 @@
 - [MySQL 8.0 SQL Statement Syntax](https://intranet.alxswe.com/rltoken/HmdmLiYBM0Q34iCYPWd9XQ)
 - [installing MySQL in Ubuntu 20.04](https://intranet.alxswe.com/rltoken/IpYI9rgbwfjxOAQQgpHCmQ)
 
-##General
+## General
 - What’s a database
 - What’s a relational database
 - What does SQL stand for
@@ -24,9 +24,9 @@
 - What are subqueries
 - How to use MySQL functions
 
-##Requirements
+## Requirements
 
-###General
+### General
 - Allowed editors: vi, vim, emacs
 - All files will be executed on Ubuntu 20.04 LTS using MySQL 8.0 (version 8.0.25)
 - All files should end with a new line
@@ -35,16 +35,16 @@
 - All SQL keywords should be in uppercase (SELECT, WHERE…)
 - The length of your files will be tested using wc
 
-##More Info
+## More Info
 
-###Comments for your SQL file:
+### Comments for your SQL file:
 $ cat my_script.sql  
 -- 3 first students in the Batch ID=3  
 -- because Batch 3 is the best!  
 SELECT id, name FROM students WHERE batch_id = 3 ORDER BY created_at DESC LIMIT 3;  
 $
 
-###Install MySQL 8.0 on Ubuntu 20.04 LTS
+### Install MySQL 8.0 on Ubuntu 20.04 LTS
 $ sudo apt update  
 $ sudo apt install mysql-server  
 ...  
@@ -71,9 +71,9 @@ mysql>
 mysql> quit  
 Bye  
 $  
-###Use “container-on-demand” to run MySQL
+### Use “container-on-demand” to run MySQL
 
-#####In the container, credentials are root/root
+##### In the container, credentials are root/root
 - Ask for container Ubuntu 20.04
 - Connect via SSH
 - OR connect via the Web terminal
@@ -90,4 +90,4 @@ performance_schema
 sys  
 $  
 
-#####In the container, credentials are root/root
+##### In the container, credentials are root/root
