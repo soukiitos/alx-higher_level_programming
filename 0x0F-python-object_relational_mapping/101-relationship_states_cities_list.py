@@ -5,8 +5,8 @@ contained in the database hbtn_0e_101_usa
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from model_city import City
-from model_state import Base, State
+from relationship_city import City
+from relationship_state import Base, State
 from sys import argv
 
 
@@ -17,11 +17,10 @@ if __name__ == '__main__':
                 username, password, db_name
                 ), pool_pre_ping=True
             )
+    Base.metadata.create_all(engine)
     session = Session(engine)
-    s_cities = session.query(State, City).join(City).order_by(
-            State.id, City.id).all()
-    for state, city in s_cities:
-        if city.id == 1:
-            print("{}: {}".format(state.id, state.name))
-        print("\t{}: {}".format(city.id, city.name))
+    for state in session.query(State).order_by(State.id).all():
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("\t{}: {}".format(city.id, city.name))
     session.close()
