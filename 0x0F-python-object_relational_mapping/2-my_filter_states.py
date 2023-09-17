@@ -8,6 +8,7 @@ from sys import argv
 
 
 if __name__ == '__main__':
+
     con = MySQLdb.connect(
             host="localhost",
             port=3306,
@@ -15,9 +16,9 @@ if __name__ == '__main__':
             passwd=argv[2],
             db=argv[3]
             )
-    cur = con.curser()
-    dem = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(argv[4])
-    cur.execute(dem)
+    cur = con.cursor()
+    cur.execute("SELECT * FROM states WHERE\
+            name LIKE BINARY '{}'".format(argv[4]))
     res = cur.fetchall()
     for i in res:
         print(i)
