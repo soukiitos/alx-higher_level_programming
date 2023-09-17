@@ -17,6 +17,7 @@ if __name__ == '__main__':
                 username, password, db_name
                 ), pool_pre_ping=True
             )
+    Base.metadata.create_all(engine)
     session = Session(engine)
     cal = State(name="California")
     sanf = City(name="San Francisco")
