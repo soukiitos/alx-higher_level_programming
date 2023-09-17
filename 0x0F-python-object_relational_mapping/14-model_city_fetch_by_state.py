@@ -2,8 +2,8 @@
 '''Print all City objects from the database hbtn_0e_14_usa'''
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
 from model_city import City
+from model_state import Base, State
 from sys import argv
 
 
