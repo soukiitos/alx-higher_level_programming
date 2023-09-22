@@ -4,8 +4,8 @@ Create the State “California” with the City “San Francisco”
 from the database hbtn_0e_100_usa
 """
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
-from relationship_city import City
+from sqlalchemy.orm import sessionmaker
+from relationship_city import Base, City
 from relationship_state import State
 from sys import argv
 
@@ -18,11 +18,9 @@ if __name__ == '__main__':
                 ), pool_pre_ping=True
             )
     Base.metadata.create_all(engine)
-    session = Session(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
     cal = State(name="California")
     sanf = City(name="San Francisco")
-    cal.cities.append(sanf)
-    session.add(cal)
-    session.add(sanf)
+    session.add(sanf, cal)
     session.commit()
-    session.close()
