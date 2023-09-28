@@ -1,3 +1,3 @@
 #!/bin/bash
 # Bash script that makes a request to 0.0.0.0:5000/catch_me that causes the server to respond with a message containing You got me!, in the body of the response
-curl -s -X PUT -H "Origin: School" -d "user_id=98" 0.0.0.0:5000/catch_me
+curl -s -X PUT -H "Origin: School" -H "X-School-User-Id: 98" -d "" 0.0.0.0:5000/catch_me -L
