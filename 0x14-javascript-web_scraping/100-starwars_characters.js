@@ -1,8 +1,9 @@
 #!/usr/bin/node
 
 const request = require('request');
+const urlID = process.argv[2];
 const homeworld = 'https://swapi-api.alx-tools.com/api/films/';
-request.get(homeworld + process.argv[2], function (error, response, body) {
+request.get(homeworld + urlID, function (error, response, body) {
   if (error) {
     console.log(error);
   }
