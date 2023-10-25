@@ -10,9 +10,9 @@ request(process.argv[2], function (error, response, body) {
       const task = data[i];
       if (task.completed === true) {
         if (completed[task.userId] === undefined) {
-	  completed[task.userId] = 1;
+          completed[task.userId] = 1;
 	} else {
-	  completed[task.userId]++;
+          completed[task.userId]++;
 	}
       }
     }
