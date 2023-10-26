@@ -11,7 +11,7 @@ request(process.argv[2], function (error, response, body) {
       if (task.completed === true) {
         if (completed[task.userId] === undefined) {
           completed[task.userId] = 1;
-	} else {
+        } else {
           completed[task.userId]++;
 	}
       }
