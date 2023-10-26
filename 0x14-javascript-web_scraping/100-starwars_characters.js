@@ -10,11 +10,11 @@ request.get(homeworld + urlID, function (error, response, body) {
   const data = JSON.parse(body);
   const task = data.characters;
   for (const i of task) {
-    request.get(i, function (error, response, bo_dy) {
+    request.get(i, function (error, response, body1) {
       if (error) {
         console.log(error);
       }
-      const dt = JSON.parse(bo_dy);
+      const dt = JSON.parse(body1);
       console.log(dt.name);
     });
   }
